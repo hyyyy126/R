@@ -1,0 +1,144 @@
+library(tidyverse)
+age = c("0-14", "15-24", "25-34", "35-44", "45-59", "60+")
+gender = c("M", "F", "Mixed")
+
+tech = list("computer", "software", "hardware", "internet", "program", "code", "digital", "python", "app", "java", "bluetooth", "electronic", "data", "system", "cyber", "virtual", "algorithm", "server", "wireless", "laptop")
+
+ta = c(78, 621, 2356, 4896, 4987, 2687)
+tg = c(31663, 4571, 6802)
+tta = tibble(age, ta)
+ttg = tibble(gender, tg)
+ttg$gender <- factor(ttg$gender, levels = c("M", "F", "Mixed"))
+fig1 = ggplot(tta, aes(x = age, y = ta)) +
+  geom_bar(stat = "identity", alpha = 0.75, fill = "lightblue", color = "black") +
+  labs(title = "Technology: Age",
+       x = "Age",
+       y = "Frequency") +
+  theme_minimal()
+fig2 = ggplot(ttg, aes(x = gender, y = tg)) +
+  geom_bar(stat = "identity", alpha = 0.75, fill = "violet", color = "black") +
+  labs(title = "Technology: Gender",
+       x = "Gender",
+       y = "Frequency") +
+  theme_minimal()
+
+fashion = list("haircut", "trendy", "perfume", "accessories", "Vuitton", "vogue", "outfit", "stylish", "beauty", "elegance", "makeup", "chic", "designer", "couture", "Chanel", "wardrobe", "fabric", "texture", "shopping", "Hermes")
+
+fa = c(32, 156, 698, 1436, 1258, 1013)
+fg = c(4697, 4580, 1872)
+ffa = tibble(age, fa)
+ffg = tibble(gender, fg)
+ffg$gender <- factor(ffg$gender, levels = c("M", "F", "Mixed"))
+fig3 = ggplot(ffa, aes(x = age, y = fa)) +
+  geom_bar(stat = "identity", alpha = 0.75, fill = "lightblue", color = "black") +
+  labs(title = "Fashion: Age",
+       x = "Age",
+       y = "Frequency") +
+  theme_minimal()
+fig4 = ggplot(ffg, aes(x = gender, y = fg)) +
+  geom_bar(stat = "identity", alpha = 0.75, fill = "violet", color = "black") +
+  labs(title = "Fashion: Gender",
+       x = "Gender",
+       y = "Frequency") +
+  theme_minimal()
+
+occupational = list("salary", "interview", "career", "employers", "boss", "job", "promotion", "resignation", "benefits", "pension", "coworker", "workplace", "task", "overtime", "performance", "evaluation", "internships", "headhunter", "recruitment", "manager")
+
+oa = c(129, 747, 3437, 5455, 7063, 3965)
+og = c(29355, 14265, 10159)
+ooa = tibble(age, oa)
+oog = tibble(gender, og)
+oog$gender <- factor(oog$gender, levels = c("M", "F", "Mixed"))
+fig5 = ggplot(ooa, aes(x = age, y = oa)) +
+  geom_bar(stat = "identity", alpha = 0.75, fill = "lightblue", color = "black") +
+  labs(title = "Occupational: Age",
+       x = "Age",
+       y = "Frequency") +
+  theme_minimal()
+fig6 = ggplot(oog, aes(x = gender, y = og)) +
+  geom_bar(stat = "identity", alpha = 0.75, fill = "violet", color = "black") +
+  labs(title = "Occupational: Gender",
+       x = "Gender",
+       y = "Frequency") +
+  theme_minimal()
+
+school = list("classroom", "lesson", "teacher", "education", "student", "curriculum", "exam", "homework", "grade", "textbook", "library", "chalkboard", "project", "playground", "maths", "graduation", "teenagers", "college", "grammar", "correction")
+
+sa = c(364, 1094, 3043, 5711, 6945, 3639)
+sg = c(36488, 13543, 7803)
+ssa = tibble(age, sa)
+ssg = tibble(gender, sg)
+ssg$gender <- factor(ssg$gender, levels = c("M", "F", "Mixed"))
+fig7 = ggplot(ssa, aes(x = age, y = sa)) +
+  geom_bar(stat = "identity", alpha = 0.75, fill = "lightblue", color = "black") +
+  labs(title = "School: Age",
+       x = "Age",
+       y = "Frequency") +
+  theme_minimal()
+fig8 = ggplot(ssg, aes(x = gender, y = sg)) +
+  geom_bar(stat = "identity", alpha = 0.75, fill = "violet", color = "black") +
+  labs(title = "School: Gender",
+       x = "Gender",
+       y = "Frequency") +
+  theme_minimal()
+
+health = list("fitness", "diet", "hygiene", "nutrition", "clinic", "medicine", "stress", "mental", "chronic", "doctor", "hospital", "vaccine", "patient", "diagnosis", "treatment", "rehabilitation", "therapy", "diasability", "symptom", "heart")
+
+ha = c(130, 537, 1993, 8626, 6184, 4083)
+hg = c(25739, 18620, 9608)
+hha = tibble(age, ha)
+hhg = tibble(gender, hg)
+hhg$gender <- factor(hhg$gender, levels = c("M", "F", "Mixed"))
+fig9 = ggplot(hha, aes(x = age, y = ha)) +
+  geom_bar(stat = "identity", alpha = 0.75, fill = "lightblue", color = "black") +
+  labs(title = "Health: Age",
+       x = "Age",
+       y = "Frequency") +
+  theme_minimal()
+fig10 = ggplot(hhg, aes(x = gender, y = hg)) +
+  geom_bar(stat = "identity", alpha = 0.75, fill = "violet", color = "black") +
+  labs(title = "Health: Gender",
+       x = "Gender",
+       y = "Frequency") +
+  theme_minimal()
+
+business = list("money", "investment", "stock", "bond", "bank", "interest", "loan", "management", "debt", "credit", "savings", "budget", "retirement", "insurance", "tax", "risk", "market", "currency", "fund", "asset")
+
+ba = c(259, 1657, 6304, 12936, 15102, 8318)
+bg = c(72316, 21958, 23036)
+bba = tibble(age, ba)
+bbg = tibble(gender, bg)
+bbg$gender <- factor(bbg$gender, levels = c("M", "F", "Mixed"))
+fig11 = ggplot(bba, aes(x = age, y = ba)) +
+  geom_bar(stat = "identity", alpha = 0.75, fill = "lightblue", color = "black") +
+  labs(title = "Business: Age",
+       x = "Age",
+       y = "Frequency") +
+  theme_minimal()
+fig12 = ggplot(bbg, aes(x = gender, y = bg)) +
+  geom_bar(stat = "identity", alpha = 0.75, fill = "violet", color = "black") +
+  labs(title = "Business: Gender",
+       x = "Gender",
+       y = "Frequency") +
+  theme_minimal()
+
+entertainment = list("movie", "music", "magazine", "game", "theater", "concert", "festival", "leisure", "hollywood", "concert", "Netflix", "Disney", "album", "cinema", "show", "pop", "cast", "filmmaking", "celebrity", "blockbuster")
+
+ea = c(421, 1266, 3694, 7848, 8927, 5449)
+eg = c(36878, 15689, 11272)
+eea = tibble(age, ea)
+eeg = tibble(gender, eg)
+eeg$gender <- factor(eeg$gender, levels = c("M", "F", "Mixed"))
+fig13 = ggplot(eea, aes(x = age, y = ea)) +
+  geom_bar(stat = "identity", alpha = 0.75, fill = "lightblue", color = "black") +
+  labs(title = "Entertainment: Age",
+       x = "Age",
+       y = "Frequency") +
+  theme_minimal()
+fig14 = ggplot(eeg, aes(x = gender, y = eg)) +
+  geom_bar(stat = "identity", alpha = 0.75, fill = "violet", color = "black") +
+  labs(title = "Entertainment: Gender",
+       x = "Gender",
+       y = "Frequency") +
+  theme_minimal()
+
